@@ -10,4 +10,7 @@ that being said we need to be on the same page about how github works:
   - If you want to make changes you'll need to **commit** those changes then **push** them to the repo
 <br>
 please feel free to ask me for help with anything
+<br>
+also this tutorial will be extremely helpful for this project: https://learn.unity.com/project/ruby-s-2d-rpg
+
 <br>-Aaron
