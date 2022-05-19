@@ -22,3 +22,4 @@ ehthumbs.db
 [Bb]uild
 sysinfo.txt
 *.stackdump
+.vscode
