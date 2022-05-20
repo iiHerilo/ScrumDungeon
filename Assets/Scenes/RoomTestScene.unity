@@ -363,6 +363,8 @@ MonoBehaviour:
   RoomDimensions: {x: 20, y: 14}
   Rooms:
   - {fileID: 8850261645384323029, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+  - {fileID: 2631142898878593558, guid: 776021834f2e7ac43887a9a5263ce2ed, type: 3}
+  - {fileID: 7280015622027019411, guid: 025f88e253d3d204fb1315c9186ac257, type: 3}
   WallParts: []
   Wall: {fileID: 11400000, guid: 4f5e6e8c76abaa045baf093842fe09bc, type: 2}
   WallTopMid: {fileID: 11400000, guid: af99a6a7048932249967a3151b1aa36e, type: 2}
