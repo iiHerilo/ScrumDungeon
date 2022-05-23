@@ -5,7 +5,10 @@ using UnityEngine.Tilemaps;
 
 public class RoomLayerOuter : MonoBehaviour
 {
-    public Vector2Int RoomDimensions = new Vector2Int(16, 10);
+    public delegate void SpawnTrigger(Vector2 location);
+    public static event SpawnTrigger OnSpawn;
+
+    public static Vector2Int RoomDimensions = new Vector2Int(22, 14);
     public List<Tilemap> Rooms = new List<Tilemap>();
     public List<Tile> WallParts = new List<Tile>();
     public Tile Wall;
@@ -22,9 +25,8 @@ public class RoomLayerOuter : MonoBehaviour
         public int number = -1; // unique room number for determining which rooms are what
     }
 
-    Room[,] plan = new Room[10, 10];
     public Vector2Int StartingRoomCoordinates = new Vector2Int();
-    int roomCount = 10;
+    public int roomCount = 10;
     int cRoomCount;
     public int RoomCount {
         get {
@@ -35,11 +37,14 @@ public class RoomLayerOuter : MonoBehaviour
                 roomCount = value;
         }
     }
+    Room[,] plan;
 
 
     // Start is called before the first frame update
     void Start()
     {   
+        plan = new Room[roomCount, roomCount];
+
         for(int i = 0; i < plan.GetLength(0); i++) {
             for(int j = 0; j < plan.GetLength(1); j++) {
                 plan[i, j] = new Room();
@@ -110,48 +115,40 @@ public class RoomLayerOuter : MonoBehaviour
             for(int y = 0; y < plan.GetLength(1); y++) {
                 if(plan[x, y].occupied)
                     {
-                        plan[x, y].realobj = Instantiate(Rooms[(int)(Random.value * Rooms.Count)].gameObject, new Vector3((x + 5) * (RoomDimensions.x), (y + 5) * (RoomDimensions.y), 0), Quaternion.identity);
+                        plan[x, y].realobj = Instantiate(Rooms[plan[x, y].number == 0 ? 0 : (int)(Random.value * Rooms.Count)].gameObject, new Vector3((x) * (RoomDimensions.x), (y) * (RoomDimensions.y), 0), Quaternion.identity);
                         plan[x, y].realobj.transform.parent = gameObject.transform;
+
+                        if(plan[x, y].number == 0) {
+                            OnSpawn(new Vector2((x) * (RoomDimensions.x), (y) * (RoomDimensions.y)));
+                        }
 
                         Tilemap tilemap = plan[x, y].realobj.GetComponent<Tilemap>();
                         
                         // exit locations
-                        Vector3Int[] north = {v3i(-1, 4, 0), v3i(0, 4, 0)};
-                        Vector3Int[] east = {v3i(-9, -1, 0), v3i(-9, -2, 0)};
-                        Vector3Int[] south = {v3i(-1, -7, 0), v3i(0, -7, 0)};
-                        Vector3Int[] west = {v3i(8, -1, 0), v3i(8, -2, 0)};
+                        Vector3Int[] north = {v3i(-1, 5, 0), v3i(0, 5, 0)};
+                        Vector3Int[] east = {v3i(-9, 0, 0), v3i(-9, -1, 0)};
+                        Vector3Int[] south = {v3i(-1, -6, 0), v3i(0, -6, 0)};
+                        Vector3Int[] west = {v3i(8, 0, 0), v3i(8, -1, 0)};
                         for(int i = 0; i < 2; i++) {
-                                if(y + 1 < plan.GetLength(1) && plan[x, y + 1].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(y + 1 < plan.GetLength(1) && plan[x, y + 1].occupied)) {
                                     tilemap.SetTile(north[i], Wall);
                                     tilemap.SetTile(v3i(north[i].x, north[i].y+1, 1), WallTopMid);
                                     tilemap.SetTile(v3i(north[i].x-1, north[i].y, 0), Wall);
                                     tilemap.SetTile(v3i(north[i].x+1, north[i].y, 0), Wall);
                                 }
-                                if(x - 1 >= 0 && plan[x - 1, y].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(x - 1 >= 0 && plan[x - 1, y].occupied)) {
                                     tilemap.SetTile(east[i], WallTopRight);
                                     tilemap.SetTile(v3i(east[i].x, east[i].y, 0), WallTopRight);
                                     tilemap.SetTile(v3i(east[i].x, east[i].y + 1, 0), WallTopRight);
                                 }
                             
-                                if(y - 1 >= 0 && plan[x, y - 1].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(y - 1 >= 0 && plan[x, y - 1].occupied)) {
                                     tilemap.SetTile(south[i], Wall);
                                     tilemap.SetTile(v3i(south[i].x, south[i].y+1, 1), WallTopMid);
                                     tilemap.SetTile(v3i(south[i].x-1, south[i].y, 0), Wall);
                                     tilemap.SetTile(v3i(south[i].x+1, south[i].y, 0), Wall);
                                 }
-                                if(x + 1 < plan.GetLength(0) && plan[x + 1, y].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(x + 1 < plan.GetLength(0) && plan[x + 1, y].occupied)) {
                                     tilemap.SetTile(west[i], WallTopLeft);
                                     tilemap.SetTile(v3i(west[i].x, west[i].y + 1, 0), WallTopLeft);
                                 }

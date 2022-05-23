@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6635401531547241089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6635401531547241091}
+  - component: {fileID: 6635401531547241088}
+  - component: {fileID: 6635401531547241090}
+  m_Layer: 0
+  m_Name: Floor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6635401531547241091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635401531547241089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!156049354 &6635401531547241088
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635401531547241089}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!114 &6635401531547241090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6635401531547241089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc216c02fa18aef488fc5fc3ae7c95e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Rooms:
+  - {fileID: 8850261645384323029, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+  - {fileID: 4954628587525111759, guid: 776021834f2e7ac43887a9a5263ce2ed, type: 3}
+  - {fileID: 6641214469830310214, guid: 025f88e253d3d204fb1315c9186ac257, type: 3}
+  - {fileID: 5157043734318262371, guid: 181abf1e8d0016a46acb4482353525c6, type: 3}
+  - {fileID: 822433029184739351, guid: 398a0848d1dba854591f28dfded7127c, type: 3}
+  WallParts: []
+  Wall: {fileID: 11400000, guid: 4f5e6e8c76abaa045baf093842fe09bc, type: 2}
+  WallTopMid: {fileID: 11400000, guid: af99a6a7048932249967a3151b1aa36e, type: 2}
+  WallTopBottomRight: {fileID: 11400000, guid: fa3c88068a5f7d649846012fd59953d2, type: 2}
+  WallTopBottomLeft: {fileID: 11400000, guid: 82714a393f4c41b42a7b814830ded1c4, type: 2}
+  WallTopRight: {fileID: 11400000, guid: 7e3bcd5d163bcf7498346b8a932a5487, type: 2}
+  WallTopLeft: {fileID: 11400000, guid: 0681635ff1fc8194fae7647911a2f902, type: 2}
+  ExitLocations: []
+  StartingRoomCoordinates: {x: 0, y: 0}
