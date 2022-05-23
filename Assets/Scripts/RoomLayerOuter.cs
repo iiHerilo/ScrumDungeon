@@ -113,7 +113,7 @@ public class RoomLayerOuter : MonoBehaviour
             for(int y = 0; y < plan.GetLength(1); y++) {
                 if(plan[x, y].occupied)
                     {
-                        plan[x, y].realobj = Instantiate(Rooms[(int)(Random.value * Rooms.Count)].gameObject, new Vector3((x) * (RoomDimensions.x), (y) * (RoomDimensions.y), 0), Quaternion.identity);
+                        plan[x, y].realobj = Instantiate(Rooms[plan[x, y].number == 0 ? 0 : (int)(Random.value * Rooms.Count)].gameObject, new Vector3((x) * (RoomDimensions.x), (y) * (RoomDimensions.y), 0), Quaternion.identity);
                         plan[x, y].realobj.transform.parent = gameObject.transform;
 
                         if(plan[x, y].number == 0) {
