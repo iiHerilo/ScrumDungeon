@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -149,6 +150,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdd44643d64ff5e4196312c5af2f349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -408,7 +421,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc216c02fa18aef488fc5fc3ae7c95e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoomDimensions: {x: 22, y: 14}
   Rooms:
   - {fileID: 8850261645384323029, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
   WallParts: []
@@ -427,6 +439,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1768142718}
     m_Modifications:
+    - target: {fileID: 4435025861820846441, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+      propertyPath: Direction
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4435025861820846441, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
       propertyPath: JumpDistance.x
       value: 6
