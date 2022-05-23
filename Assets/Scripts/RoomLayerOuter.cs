@@ -25,9 +25,8 @@ public class RoomLayerOuter : MonoBehaviour
         public int number = -1; // unique room number for determining which rooms are what
     }
 
-    Room[,] plan = new Room[10, 10];
     public Vector2Int StartingRoomCoordinates = new Vector2Int();
-    int roomCount = 10;
+    public int roomCount = 10;
     int cRoomCount;
     public int RoomCount {
         get {
@@ -38,11 +37,14 @@ public class RoomLayerOuter : MonoBehaviour
                 roomCount = value;
         }
     }
+    Room[,] plan;
 
 
     // Start is called before the first frame update
     void Start()
     {   
+        plan = new Room[roomCount, roomCount];
+
         for(int i = 0; i < plan.GetLength(0); i++) {
             for(int j = 0; j < plan.GetLength(1); j++) {
                 plan[i, j] = new Room();
@@ -128,37 +130,25 @@ public class RoomLayerOuter : MonoBehaviour
                         Vector3Int[] south = {v3i(-1, -6, 0), v3i(0, -6, 0)};
                         Vector3Int[] west = {v3i(8, 0, 0), v3i(8, -1, 0)};
                         for(int i = 0; i < 2; i++) {
-                                if(y + 1 < plan.GetLength(1) && plan[x, y + 1].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(y + 1 < plan.GetLength(1) && plan[x, y + 1].occupied)) {
                                     tilemap.SetTile(north[i], Wall);
                                     tilemap.SetTile(v3i(north[i].x, north[i].y+1, 1), WallTopMid);
                                     tilemap.SetTile(v3i(north[i].x-1, north[i].y, 0), Wall);
                                     tilemap.SetTile(v3i(north[i].x+1, north[i].y, 0), Wall);
                                 }
-                                if(x - 1 >= 0 && plan[x - 1, y].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(x - 1 >= 0 && plan[x - 1, y].occupied)) {
                                     tilemap.SetTile(east[i], WallTopRight);
                                     tilemap.SetTile(v3i(east[i].x, east[i].y, 0), WallTopRight);
                                     tilemap.SetTile(v3i(east[i].x, east[i].y + 1, 0), WallTopRight);
                                 }
                             
-                                if(y - 1 >= 0 && plan[x, y - 1].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(y - 1 >= 0 && plan[x, y - 1].occupied)) {
                                     tilemap.SetTile(south[i], Wall);
                                     tilemap.SetTile(v3i(south[i].x, south[i].y+1, 1), WallTopMid);
                                     tilemap.SetTile(v3i(south[i].x-1, south[i].y, 0), Wall);
                                     tilemap.SetTile(v3i(south[i].x+1, south[i].y, 0), Wall);
                                 }
-                                if(x + 1 < plan.GetLength(0) && plan[x + 1, y].occupied) {
-                                    // Add Room Change Trigger
-                                }
-                                else {
+                                if(!(x + 1 < plan.GetLength(0) && plan[x + 1, y].occupied)) {
                                     tilemap.SetTile(west[i], WallTopLeft);
                                     tilemap.SetTile(v3i(west[i].x, west[i].y + 1, 0), WallTopLeft);
                                 }
