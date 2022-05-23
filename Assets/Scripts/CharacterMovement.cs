@@ -5,6 +5,10 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     public float speed = 2.0f;
+    public float maxRight = 7;
+    public float maxLeft = -7;
+    public float maxUp = 4;
+    public float maxDown = -4.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +22,16 @@ public class CharacterMovement : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
         Debug.Log(horizontal);
         Vector2 position = transform.position;
+        if (horizontal == 1 && position.x >= maxRight || horizontal == -1 && position.x <= maxLeft)
+        {
+            horizontal = 0;
+        }
+        if (vertical == 1 && position.y >= maxUp || vertical == -1 && position.y <= maxDown)
+        {
+            vertical = 0;
+        }
         position.x += speed * horizontal * Time.deltaTime;
-        position.y += speed * vertical *  Time.deltaTime;
+        position.y += speed * vertical * Time.deltaTime;
         transform.position = position;
     }
 }

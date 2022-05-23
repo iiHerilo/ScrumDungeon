@@ -5,9 +5,9 @@ using UnityEngine;
 public class EnemyMovementHorizontal : MonoBehaviour
 {
     public bool goRight = true;
-    public float enemySpeed = 0.01f;
-    public float maxRight = 7;
-    public float maxLeft = -7;
+    public float enemyHorizSpeed = 0.01f;
+    public float enemyMaxRight = 7;
+    public float enemyMaxLeft = -7;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +18,21 @@ public class EnemyMovementHorizontal : MonoBehaviour
     void Update()
     {
         Vector2 position = transform.position;
-        if (position.x >= maxRight)
+        if (position.x >= enemyMaxRight)
         {
             goRight = false;
         }
-        if (position.x <= maxLeft)
+        if (position.x <= enemyMaxLeft)
         {
             goRight = true;
         }
         if (goRight == true)
         {
-            position.x += enemySpeed;
+            position.x += enemyHorizSpeed;
         }
         else
         {
-            position.x -= enemySpeed;
+            position.x -= enemyHorizSpeed;
         }
         transform.position = position;
     }
