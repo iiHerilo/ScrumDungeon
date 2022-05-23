@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class RoomLayerOuter : MonoBehaviour
 {
-    public Vector2Int RoomDimensions = new Vector2Int(16, 10);
+    public static Vector2Int RoomDimensions = new Vector2Int(22, 14);
     public List<Tilemap> Rooms = new List<Tilemap>();
     public List<Tile> WallParts = new List<Tile>();
     public Tile Wall;

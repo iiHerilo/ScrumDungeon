@@ -16,10 +16,26 @@ public class CharacterMovement : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
-        Debug.Log(horizontal);
         Vector2 position = transform.position;
         position.x += speed * horizontal * Time.deltaTime;
         position.y += speed * vertical *  Time.deltaTime;
+        transform.position = position;
+    }
+
+
+
+    void OnEnable() {
+        TeleporterZone.OnTeleport += Teleport;
+    }
+    void OnDisable() {
+        TeleporterZone.OnTeleport -= Teleport;
+    }
+
+
+    void Teleport(Vector2 pos) {
+        Vector2 position = transform.position;
+        position.x += pos.x;
+        position.y += pos.y;
         transform.position = position;
     }
 }
