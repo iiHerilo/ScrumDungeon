@@ -26,16 +26,25 @@ public class CharacterMovement : MonoBehaviour
 
     void OnEnable() {
         TeleporterZone.OnTeleport += Teleport;
+        RoomLayerOuter.OnSpawn += Goto;
     }
     void OnDisable() {
         TeleporterZone.OnTeleport -= Teleport;
+        RoomLayerOuter.OnSpawn -= Goto;
     }
 
 
     void Teleport(Vector2 pos) {
-        Vector2 position = transform.position;
+        Vector3 position = transform.position;
         position.x += pos.x;
         position.y += pos.y;
+        transform.position = position;
+    }
+
+    void Goto(Vector2 pos) {
+        Vector3 position = transform.position;
+        position.x = pos.x;
+        position.y = pos.y;
         transform.position = position;
     }
 }

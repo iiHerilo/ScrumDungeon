@@ -5,6 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class RoomLayerOuter : MonoBehaviour
 {
+    public delegate void SpawnTrigger(Vector2 location);
+    public static event SpawnTrigger OnSpawn;
+
     public static Vector2Int RoomDimensions = new Vector2Int(22, 14);
     public List<Tilemap> Rooms = new List<Tilemap>();
     public List<Tile> WallParts = new List<Tile>();
@@ -110,16 +113,20 @@ public class RoomLayerOuter : MonoBehaviour
             for(int y = 0; y < plan.GetLength(1); y++) {
                 if(plan[x, y].occupied)
                     {
-                        plan[x, y].realobj = Instantiate(Rooms[(int)(Random.value * Rooms.Count)].gameObject, new Vector3((x + 5) * (RoomDimensions.x), (y + 5) * (RoomDimensions.y), 0), Quaternion.identity);
+                        plan[x, y].realobj = Instantiate(Rooms[(int)(Random.value * Rooms.Count)].gameObject, new Vector3((x) * (RoomDimensions.x), (y) * (RoomDimensions.y), 0), Quaternion.identity);
                         plan[x, y].realobj.transform.parent = gameObject.transform;
+
+                        if(plan[x, y].number == 0) {
+                            OnSpawn(new Vector2((x) * (RoomDimensions.x), (y) * (RoomDimensions.y)));
+                        }
 
                         Tilemap tilemap = plan[x, y].realobj.GetComponent<Tilemap>();
                         
                         // exit locations
-                        Vector3Int[] north = {v3i(-1, 4, 0), v3i(0, 4, 0)};
-                        Vector3Int[] east = {v3i(-9, -1, 0), v3i(-9, -2, 0)};
-                        Vector3Int[] south = {v3i(-1, -7, 0), v3i(0, -7, 0)};
-                        Vector3Int[] west = {v3i(8, -1, 0), v3i(8, -2, 0)};
+                        Vector3Int[] north = {v3i(-1, 5, 0), v3i(0, 5, 0)};
+                        Vector3Int[] east = {v3i(-9, 0, 0), v3i(-9, -1, 0)};
+                        Vector3Int[] south = {v3i(-1, -6, 0), v3i(0, -6, 0)};
+                        Vector3Int[] west = {v3i(8, 0, 0), v3i(8, -1, 0)};
                         for(int i = 0; i < 2; i++) {
                                 if(y + 1 < plan.GetLength(1) && plan[x, y + 1].occupied) {
                                     // Add Room Change Trigger
