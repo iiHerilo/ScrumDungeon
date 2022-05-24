@@ -174,9 +174,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 599972246}
     m_Modifications:
+    - target: {fileID: 302930991037968415, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3014677028739564156, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5050180198853918859, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004464829284413794, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8850261645384323026, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
       propertyPath: m_Name
       value: room01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850261645384323026, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8850261645384323027, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}
       propertyPath: m_RootOrder
@@ -241,7 +261,7 @@ GameObject:
   - component: {fileID: 1104532840}
   - component: {fileID: 1104532839}
   - component: {fileID: 1104532843}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ogre00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,10 +281,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.15005577, y: -1.2804809}
+  m_Offset: {x: -0.049373984, y: 0.19618595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4, y: 0}
     oldSize: {x: 2, y: 3}
     newSize: {x: 2, y: 3}
     adaptiveTilingThreshold: 0.5
@@ -272,7 +292,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0196326, y: 0.43903828}
+  m_Size: {x: 1.2209961, y: 0.5732806}
   m_EdgeRadius: 0
 --- !u!50 &1104532840
 Rigidbody2D:
@@ -354,7 +374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104532838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.3, y: 1.96, z: 0}
+  m_LocalPosition: {x: 7.04, y: -0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -373,7 +393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  speed: 4
+  speed: 1
+  sightRange: 15
 --- !u!1 &1514315364
 GameObject:
   m_ObjectHideFlags: 0
@@ -387,9 +408,9 @@ GameObject:
   - component: {fileID: 1514315366}
   - component: {fileID: 1514315365}
   - component: {fileID: 1514315369}
-  m_Layer: 0
-  m_Name: ElfM00
-  m_TagString: Untagged
+  m_Layer: 10
+  m_Name: Player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -428,10 +449,10 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.017953873, y: -0.83485305}
+  m_Offset: {x: -0.017953873, y: 0.16050297}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 1, y: 2}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
@@ -439,7 +460,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.53320026, y: 0.3302939}
+  m_Size: {x: 0.53320026, y: 0.37553728}
   m_EdgeRadius: 0
 --- !u!212 &1514315367
 SpriteRenderer:
@@ -500,7 +521,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514315364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3545444, y: 1.6456323, z: 0}
+  m_LocalPosition: {x: -7.46, y: -0.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
