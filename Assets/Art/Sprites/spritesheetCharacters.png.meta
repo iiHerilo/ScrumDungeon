@@ -28,7 +28,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_7
   - first:
       213: 6304405282692089680
-    second: dungeontileset-extended (3)_8
+    second: ElfF00
   - first:
       213: 2451927772520390788
     second: dungeontileset-extended (3)_9
@@ -55,7 +55,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_16
   - first:
       213: -6500290762700296304
-    second: dungeontileset-extended (3)_17
+    second: ZombieBig00
   - first:
       213: -3658587172190892055
     second: dungeontileset-extended (3)_18
@@ -127,7 +127,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_40
   - first:
       213: -1153517042720450859
-    second: dungeontileset-extended (3)_41
+    second: ElfM00
   - first:
       213: -2816185691050770657
     second: dungeontileset-extended (3)_42
@@ -154,7 +154,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_49
   - first:
       213: 8741646996088592054
-    second: dungeontileset-extended (3)_50
+    second: Demon00
   - first:
       213: 2008270192897277520
     second: dungeontileset-extended (3)_51
@@ -202,7 +202,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_65
   - first:
       213: -6868544048910125540
-    second: dungeontileset-extended (3)_66
+    second: Skele00
   - first:
       213: 746943360843095862
     second: dungeontileset-extended (3)_67
@@ -226,7 +226,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_73
   - first:
       213: 7561480056599738444
-    second: dungeontileset-extended (3)_74
+    second: KnightF00
   - first:
       213: 6900745434540302049
     second: dungeontileset-extended (3)_75
@@ -301,7 +301,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_98
   - first:
       213: -8919166484142074513
-    second: dungeontileset-extended (3)_99
+    second: Muddy00
   - first:
       213: 3656276347449019101
     second: dungeontileset-extended (3)_100
@@ -313,7 +313,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_102
   - first:
       213: -2295542841778121612
-    second: dungeontileset-extended (3)_103
+    second: Swampy00
   - first:
       213: -5104697787047776832
     second: dungeontileset-extended (3)_104
@@ -325,7 +325,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_106
   - first:
       213: -6159353864854304975
-    second: dungeontileset-extended (3)_107
+    second: KnightM00
   - first:
       213: -6120783691274756544
     second: dungeontileset-extended (3)_108
@@ -400,7 +400,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_131
   - first:
       213: 8047448024620407481
-    second: dungeontileset-extended (3)_132
+    second: Zombie00
   - first:
       213: 195697942645110230
     second: dungeontileset-extended (3)_133
@@ -412,7 +412,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_135
   - first:
       213: -1363345809961221989
-    second: dungeontileset-extended (3)_136
+    second: ZombieIce00
   - first:
       213: -7544707618425530961
     second: dungeontileset-extended (3)_137
@@ -424,7 +424,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_139
   - first:
       213: 7902235551486531118
-    second: dungeontileset-extended (3)_140
+    second: WizardF00
   - first:
       213: -3447188343282447708
     second: dungeontileset-extended (3)_141
@@ -523,7 +523,7 @@ TextureImporter:
     second: orcMasked07
   - first:
       213: 2563652367356274697
-    second: dungeontileset-extended (3)_173
+    second: WizardM00
   - first:
       213: 8242762234408080477
     second: dungeontileset-extended (3)_174
@@ -574,7 +574,7 @@ TextureImporter:
     second: orcWarrior07
   - first:
       213: -3574415972306455470
-    second: dungeontileset-extended (3)_190
+    second: KoboldF00
   - first:
       213: 6888695362962808354
     second: dungeontileset-extended (3)_191
@@ -625,7 +625,7 @@ TextureImporter:
     second: orcShaman07
   - first:
       213: -6362985239053297318
-    second: dungeontileset-extended (3)_207
+    second: KoboldM00
   - first:
       213: -1004778131159159729
     second: dungeontileset-extended (3)_208
@@ -652,7 +652,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_215
   - first:
       213: -3450572128145814127
-    second: dungeontileset-extended (3)_216
+    second: Necromancer00
   - first:
       213: -8092650403439038712
     second: dungeontileset-extended (3)_217
@@ -691,7 +691,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_228
   - first:
       213: 7569323641943525671
-    second: dungeontileset-extended (3)_229
+    second: Wogol00
   - first:
       213: 6466316316547440699
     second: dungeontileset-extended (3)_230
@@ -715,7 +715,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_236
   - first:
       213: 3805808633687519382
-    second: dungeontileset-extended (3)_237
+    second: Chort00
   - first:
       213: 8219418080227985380
     second: dungeontileset-extended (3)_238
@@ -1093,7 +1093,7 @@ TextureImporter:
     second: dungeontileset-extended (3)_362
   - first:
       213: 1467346930369530019
-    second: spritesheetCharacters_0
+    second: ZombieTiny00
   - first:
       213: 2976991133689353542
     second: spritesheetCharacters_1
@@ -1141,7 +1141,7 @@ TextureImporter:
     second: goblin07
   - first:
       213: 7476396230098414608
-    second: spritesheetCharacters_16
+    second: Imp00
   - first:
       213: -7068237885979219655
     second: spritesheetCharacters_17
@@ -1252,7 +1252,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_8
+      name: ElfF00
       rect:
         serializedVersion: 2
         x: 144
@@ -1441,7 +1441,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_17
+      name: ZombieBig00
       rect:
         serializedVersion: 2
         x: 307
@@ -1777,7 +1777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_41
+      name: ElfM00
       rect:
         serializedVersion: 2
         x: 144
@@ -1966,7 +1966,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_50
+      name: Demon00
       rect:
         serializedVersion: 2
         x: 307
@@ -2134,7 +2134,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_66
+      name: Skele00
       rect:
         serializedVersion: 2
         x: 0
@@ -2302,7 +2302,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_74
+      name: KnightF00
       rect:
         serializedVersion: 2
         x: 144
@@ -2491,7 +2491,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_99
+      name: Muddy00
       rect:
         serializedVersion: 2
         x: 0
@@ -2575,7 +2575,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_103
+      name: Swampy00
       rect:
         serializedVersion: 2
         x: 64
@@ -2659,7 +2659,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_107
+      name: KnightM00
       rect:
         serializedVersion: 2
         x: 144
@@ -2848,7 +2848,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_132
+      name: Zombie00
       rect:
         serializedVersion: 2
         x: 0
@@ -2932,7 +2932,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_136
+      name: ZombieIce00
       rect:
         serializedVersion: 2
         x: 64
@@ -3016,7 +3016,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_140
+      name: WizardF00
       rect:
         serializedVersion: 2
         x: 144
@@ -3373,7 +3373,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_173
+      name: WizardM00
       rect:
         serializedVersion: 2
         x: 144
@@ -3730,7 +3730,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_190
+      name: KoboldF00
       rect:
         serializedVersion: 2
         x: 144
@@ -4087,7 +4087,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_207
+      name: KoboldM00
       rect:
         serializedVersion: 2
         x: 144
@@ -4276,7 +4276,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_216
+      name: Necromancer00
       rect:
         serializedVersion: 2
         x: 0
@@ -4549,7 +4549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_229
+      name: Wogol00
       rect:
         serializedVersion: 2
         x: 0
@@ -4717,7 +4717,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended (3)_237
+      name: Chort00
       rect:
         serializedVersion: 2
         x: 0
@@ -5053,7 +5053,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_0
+      name: ZombieTiny00
       rect:
         serializedVersion: 2
         x: 0
@@ -5389,7 +5389,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_16
+      name: Imp00
       rect:
         serializedVersion: 2
         x: 0
