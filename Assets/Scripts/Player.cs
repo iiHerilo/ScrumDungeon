@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     public float speed = 2.0f;
     public float maxRight = 7;
@@ -10,13 +10,19 @@ public class CharacterMovement : MonoBehaviour
     public float maxUp = 4;
     public float maxDown = -4.5f;
 
-    Rigidbody2D physics;
+    public int maxHealth = 4;
+    int currentHealth;
+
+    Hearts hearts;
     float horizontal;
     float vertical;
+
     // Start is called before the first frame update
     void Start()
     {
-        physics = GetComponent<Rigidbody2D>();
+        hearts = GetComponent<Hearts>();
+
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -24,10 +30,7 @@ public class CharacterMovement : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        // I get what this is supposed to do but it doesnt work since the axis aren't acceleration
-        // Commented this code out in favor of movement that interacts with the actual physics engine
-        // --Aaron
-        /*Vector2 position = transform.position;
+        Vector2 position = transform.position;
         if (horizontal == 1 && position.x >= maxRight || horizontal == -1 && position.x <= maxLeft)
         {
             horizontal = 0;
@@ -38,15 +41,13 @@ public class CharacterMovement : MonoBehaviour
         }
         position.x += speed * horizontal * Time.deltaTime;
         position.y += speed * vertical * Time.deltaTime;
-        transform.position = position;*/
+        transform.position = position;
     }
 
-    void FixedUpdate() {
-        Vector3 position = transform.position;
-        position.x += speed * horizontal * Time.deltaTime;
-        position.y += speed * vertical * Time.deltaTime;
-
-        physics.MovePosition(position);
+    public void ChangeHealth(int amount)
+    {
+        currentHealth = hearts.GetHealth(currentHealth + amount, 0, maxHealth);
+        Debug.Log(currentHealth + "/" + maxHealth);
     }
 
 

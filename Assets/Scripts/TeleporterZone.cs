@@ -19,7 +19,7 @@ public class TeleporterZone : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D other) {
-        CharacterMovement chr = other.GetComponent<CharacterMovement>();
+        Player chr = other.GetComponent<Player>();
 
         if(chr != null) {
             Debug.Log("Whoop!!!!! at " + Direction);
