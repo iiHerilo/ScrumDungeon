@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovementHorizontal : MonoBehaviour
+public class RedEnemy: MonoBehaviour
 {
     public bool goRight = true;
     public float enemyHorizSpeed = 0.01f;

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovementVertical : MonoBehaviour
+public class Ogre : MonoBehaviour
 {
     public bool goUp = true;
     public float enemyVertiSpeed = 0.01f;
