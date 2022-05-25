@@ -26,7 +26,7 @@ public class EnemyAI : MonoBehaviour
         // Enemy only moves if player is within a certain range
         if(Mathf.Abs(Mathf.Sqrt((diffs.x * diffs.x) + (diffs.y * diffs.y))) <= sightRange) {
             float theta = Mathf.Atan(diffs.y / diffs.x);
-            // For some reason omitting this causes the enemy to run in the wrong direction
+            // For some reason omitting this causes the enemy to run in the wrong direction when this condition is met
             if(diffs.x <= 0) 
                 theta += Mathf.PI;
             Vector2 velocity = new Vector2(Mathf.Cos(theta) * speed, Mathf.Sin(theta) * speed);
