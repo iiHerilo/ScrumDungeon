@@ -8,7 +8,7 @@ public class RoomLayerOuter : MonoBehaviour
     public delegate void SpawnTrigger(Vector2 location);
     public static event SpawnTrigger OnSpawn;
 
-    public static Vector2Int RoomDimensions = new Vector2Int(22, 14);
+    public static Vector2Int RoomDimensions = new Vector2Int(40, 40);
     public List<Tilemap> Rooms = new List<Tilemap>();
     public List<Tile> WallParts = new List<Tile>();
     public Tile Wall;

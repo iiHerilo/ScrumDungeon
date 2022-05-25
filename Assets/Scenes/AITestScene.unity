@@ -284,7 +284,7 @@ BoxCollider2D:
   m_Offset: {x: -0.049373984, y: 0.19618595}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4, y: 0}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 2, y: 3}
     newSize: {x: 2, y: 3}
     adaptiveTilingThreshold: 0.5
@@ -355,7 +355,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1779130919148148000, guid: 591c0d95bb7aaba4f8b4b8fa855f1d1d, type: 3}
+  m_Sprite: {fileID: -585222251124587354, guid: 591c0d95bb7aaba4f8b4b8fa855f1d1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -502,7 +502,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1153517042720450859, guid: 591c0d95bb7aaba4f8b4b8fa855f1d1d, type: 3}
+  m_Sprite: {fileID: -5801644695562442841, guid: 591c0d95bb7aaba4f8b4b8fa855f1d1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -544,6 +544,7 @@ MonoBehaviour:
   maxLeft: -7
   maxUp: 4
   maxDown: -4.5
+  maxHealth: 4
 --- !u!4 &1976838189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8850261645384323027, guid: 57661d1ebf1de4d46a688dc019d14c15, type: 3}

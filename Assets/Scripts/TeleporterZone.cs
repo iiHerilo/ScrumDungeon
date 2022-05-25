@@ -14,7 +14,8 @@ public class TeleporterZone : MonoBehaviour
         West
     }
 
-    public Vector2 JumpDistance = new Vector2(6, 4);
+    Vector2 JumpDistance = new Vector2(25, 30);
+    //Vector2 JumpDistance = new Vector2(0, 0);
     public Cardinal Direction = Cardinal.North;
 
 
@@ -22,9 +23,8 @@ public class TeleporterZone : MonoBehaviour
         Player chr = other.GetComponent<Player>();
 
         if(chr != null) {
-            Debug.Log("Whoop!!!!! at " + Direction);
-
             Vector2 next = JumpDistance;
+            Debug.Log(next);
 
             switch(Direction) {
                 case Cardinal.North:
