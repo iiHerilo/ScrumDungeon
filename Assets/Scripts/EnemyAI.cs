@@ -7,6 +7,7 @@ public class EnemyAI : MonoBehaviour
     public int health = 2;
     public float speed = 4.0f;
     public float sightRange = 15f;
+    public int WaitToStartTimer = 30;
 
     Rigidbody2D physics;
     GameObject Player;
@@ -24,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     {
         Vector2 diffs = new Vector2((transform.position.x - Player.transform.position.x), (transform.transform.position.y - Player.transform.position.y));
         // Enemy only moves if player is within a certain range
-        if(Mathf.Abs(Mathf.Sqrt((diffs.x * diffs.x) + (diffs.y * diffs.y))) <= sightRange) {
+        if(Mathf.Abs(Mathf.Sqrt((diffs.x * diffs.x) + (diffs.y * diffs.y))) <= sightRange && WaitToStartTimer <= 0) {
             float theta = Mathf.Atan(diffs.y / diffs.x);
             // For some reason omitting this causes the enemy to run in the wrong direction when this condition is met
             if(diffs.x <= 0) 
@@ -32,7 +33,11 @@ public class EnemyAI : MonoBehaviour
             Vector2 velocity = new Vector2(Mathf.Cos(theta) * speed, Mathf.Sin(theta) * speed);
             physics.velocity = -velocity;
         }
-        
-        
+    }
+
+    void FixedUpdate() {
+        if(WaitToStartTimer > -1) {
+            WaitToStartTimer--;
+        }
     }
 }
