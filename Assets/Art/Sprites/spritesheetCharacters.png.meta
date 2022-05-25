@@ -1117,31 +1117,31 @@ TextureImporter:
     second: LilZombie7
   - first:
       213: 5265542147880145739
-    second: ElfF0
+    second: ElfF
   - first:
       213: 5805833842594692617
-    second: spritesheetCharacters_9
+    second: ElfF0
   - first:
       213: 5132373071266874166
-    second: spritesheetCharacters_10
+    second: ElfF1
   - first:
       213: 7591605933769275477
-    second: spritesheetCharacters_11
+    second: ElfF2
   - first:
       213: -3404271351522890290
-    second: spritesheetCharacters_12
+    second: ElfF3
   - first:
       213: 4771426507185995873
-    second: spritesheetCharacters_13
+    second: ElfF4
   - first:
       213: 8433595837890392796
-    second: spritesheetCharacters_14
+    second: ElfF5
   - first:
       213: 3268717255006170754
-    second: spritesheetCharacters_15
+    second: ElfF6
   - first:
       213: 7476396230098414608
-    second: spritesheetCharacters_16
+    second: ElfF7
   - first:
       213: -7068237885979219655
     second: Tank0
@@ -1519,7 +1519,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfF0
+      name: ElfF
       rect:
         serializedVersion: 2
         x: 144
@@ -1540,7 +1540,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_9
+      name: ElfF0
       rect:
         serializedVersion: 2
         x: 160
@@ -1561,7 +1561,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_10
+      name: ElfF1
       rect:
         serializedVersion: 2
         x: 176
@@ -1582,7 +1582,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_11
+      name: ElfF2
       rect:
         serializedVersion: 2
         x: 192
@@ -1603,7 +1603,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_12
+      name: ElfF3
       rect:
         serializedVersion: 2
         x: 208
@@ -1624,7 +1624,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_13
+      name: ElfF4
       rect:
         serializedVersion: 2
         x: 224
@@ -1645,7 +1645,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_14
+      name: ElfF5
       rect:
         serializedVersion: 2
         x: 240
@@ -1666,7 +1666,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_15
+      name: ElfF6
       rect:
         serializedVersion: 2
         x: 256
@@ -1687,7 +1687,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_16
+      name: ElfF7
       rect:
         serializedVersion: 2
         x: 272
@@ -1855,7 +1855,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ElfM0
+      name: ElfM
       rect:
         serializedVersion: 2
         x: 144
@@ -1876,7 +1876,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_42
+      name: ElfM0
       rect:
         serializedVersion: 2
         x: 160
@@ -1897,7 +1897,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_43
+      name: ElfM1
       rect:
         serializedVersion: 2
         x: 176
@@ -1918,7 +1918,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_44
+      name: ElfM2
       rect:
         serializedVersion: 2
         x: 192
@@ -1939,7 +1939,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_45
+      name: ElfM3
       rect:
         serializedVersion: 2
         x: 208
@@ -1960,7 +1960,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_46
+      name: ElfM4
       rect:
         serializedVersion: 2
         x: 224
@@ -1981,7 +1981,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_47
+      name: ElfM5
       rect:
         serializedVersion: 2
         x: 240
@@ -2002,7 +2002,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_48
+      name: ElfM6
       rect:
         serializedVersion: 2
         x: 256
@@ -2023,7 +2023,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_49
+      name: ElfM7
       rect:
         serializedVersion: 2
         x: 272
@@ -2212,7 +2212,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightF0
+      name: KnightF
       rect:
         serializedVersion: 2
         x: 144
@@ -2233,7 +2233,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_75
+      name: KnightF0
       rect:
         serializedVersion: 2
         x: 160
@@ -2254,7 +2254,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_76
+      name: KnightF1
       rect:
         serializedVersion: 2
         x: 176
@@ -2275,7 +2275,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_77
+      name: KnightF2
       rect:
         serializedVersion: 2
         x: 192
@@ -2296,7 +2296,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_78
+      name: KnightF3
       rect:
         serializedVersion: 2
         x: 208
@@ -2317,7 +2317,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_79
+      name: KnightF4
       rect:
         serializedVersion: 2
         x: 224
@@ -2338,7 +2338,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_80
+      name: KnightF5
       rect:
         serializedVersion: 2
         x: 240
@@ -2359,7 +2359,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_81
+      name: KnightF6
       rect:
         serializedVersion: 2
         x: 256
@@ -2380,7 +2380,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_82
+      name: KnightF7
       rect:
         serializedVersion: 2
         x: 272
@@ -2569,7 +2569,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KnightM0
+      name: KnightM
       rect:
         serializedVersion: 2
         x: 144
@@ -2590,7 +2590,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_108
+      name: KnightM0
       rect:
         serializedVersion: 2
         x: 160
@@ -2611,7 +2611,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_109
+      name: KnightM1
       rect:
         serializedVersion: 2
         x: 176
@@ -2632,7 +2632,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_110
+      name: KnightM2
       rect:
         serializedVersion: 2
         x: 192
@@ -2653,7 +2653,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_111
+      name: KnightM3
       rect:
         serializedVersion: 2
         x: 208
@@ -2674,7 +2674,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_112
+      name: KnightM4
       rect:
         serializedVersion: 2
         x: 224
@@ -2695,7 +2695,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_113
+      name: KnightM5
       rect:
         serializedVersion: 2
         x: 240
@@ -2716,7 +2716,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_114
+      name: KnightM6
       rect:
         serializedVersion: 2
         x: 256
@@ -2737,7 +2737,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_115
+      name: KnightM7
       rect:
         serializedVersion: 2
         x: 272
@@ -2926,7 +2926,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardF0
+      name: WizardF
       rect:
         serializedVersion: 2
         x: 144
@@ -2947,7 +2947,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_141
+      name: WizardF0
       rect:
         serializedVersion: 2
         x: 160
@@ -2968,7 +2968,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_142
+      name: WizardF1
       rect:
         serializedVersion: 2
         x: 176
@@ -2989,7 +2989,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_143
+      name: WizardF2
       rect:
         serializedVersion: 2
         x: 192
@@ -3010,7 +3010,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_144
+      name: WizardF3
       rect:
         serializedVersion: 2
         x: 208
@@ -3031,7 +3031,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_145
+      name: WizardF4
       rect:
         serializedVersion: 2
         x: 224
@@ -3052,7 +3052,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_146
+      name: WizardF5
       rect:
         serializedVersion: 2
         x: 240
@@ -3073,7 +3073,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_147
+      name: WizardF6
       rect:
         serializedVersion: 2
         x: 256
@@ -3094,7 +3094,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_148
+      name: WizardF7
       rect:
         serializedVersion: 2
         x: 272
@@ -3283,7 +3283,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WizardM0
+      name: WizardM
       rect:
         serializedVersion: 2
         x: 144
@@ -3304,7 +3304,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_174
+      name: WizardM0
       rect:
         serializedVersion: 2
         x: 160
@@ -3325,7 +3325,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_175
+      name: WizardM1
       rect:
         serializedVersion: 2
         x: 176
@@ -3346,7 +3346,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_176
+      name: WizardM2
       rect:
         serializedVersion: 2
         x: 192
@@ -3367,7 +3367,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_177
+      name: WizardM3
       rect:
         serializedVersion: 2
         x: 208
@@ -3388,7 +3388,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_178
+      name: WizardM4
       rect:
         serializedVersion: 2
         x: 224
@@ -3409,7 +3409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_179
+      name: WizardM5
       rect:
         serializedVersion: 2
         x: 240
@@ -3430,7 +3430,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_180
+      name: WizardM6
       rect:
         serializedVersion: 2
         x: 256
@@ -3451,7 +3451,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_181
+      name: WizardM7
       rect:
         serializedVersion: 2
         x: 272
@@ -3640,7 +3640,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KoboldF0
+      name: KoboldF
       rect:
         serializedVersion: 2
         x: 144
@@ -3661,7 +3661,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_191
+      name: KoboldF0
       rect:
         serializedVersion: 2
         x: 160
@@ -3682,7 +3682,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_192
+      name: KoboldF1
       rect:
         serializedVersion: 2
         x: 176
@@ -3703,7 +3703,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_193
+      name: KoboldF2
       rect:
         serializedVersion: 2
         x: 192
@@ -3724,7 +3724,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_194
+      name: KoboldF3
       rect:
         serializedVersion: 2
         x: 208
@@ -3745,7 +3745,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_195
+      name: KoboldF4
       rect:
         serializedVersion: 2
         x: 224
@@ -3766,7 +3766,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_196
+      name: KoboldF5
       rect:
         serializedVersion: 2
         x: 240
@@ -3787,7 +3787,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_197
+      name: KoboldF6
       rect:
         serializedVersion: 2
         x: 256
@@ -3808,7 +3808,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_198
+      name: KoboldF7
       rect:
         serializedVersion: 2
         x: 272
@@ -3997,7 +3997,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KoboldM0
+      name: KoboldM
       rect:
         serializedVersion: 2
         x: 144
@@ -4018,7 +4018,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_208
+      name: KoboldM0
       rect:
         serializedVersion: 2
         x: 160
@@ -4039,7 +4039,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_209
+      name: KoboldM1
       rect:
         serializedVersion: 2
         x: 176
@@ -4060,7 +4060,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_210
+      name: KoboldM2
       rect:
         serializedVersion: 2
         x: 192
@@ -4081,7 +4081,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_211
+      name: KoboldM3
       rect:
         serializedVersion: 2
         x: 208
@@ -4102,7 +4102,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_212
+      name: KoboldM4
       rect:
         serializedVersion: 2
         x: 224
@@ -4123,7 +4123,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_213
+      name: KoboldM5
       rect:
         serializedVersion: 2
         x: 240
@@ -4144,7 +4144,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_214
+      name: KoboldM6
       rect:
         serializedVersion: 2
         x: 256
@@ -4165,7 +4165,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheetCharacters_215
+      name: KoboldM7
       rect:
         serializedVersion: 2
         x: 272
