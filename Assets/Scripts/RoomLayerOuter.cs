@@ -52,13 +52,10 @@ public class RoomLayerOuter : MonoBehaviour
         }
         StartingRoomCoordinates.x = (int)(Random.value * 10);
         StartingRoomCoordinates.y = (int)(Random.value * 10);
-        
-
-        Debug.Log(StartingRoomCoordinates);
+    
 
         cRoomCount = roomCount;
         TryForRoom(StartingRoomCoordinates, 0);
-        Debug.Log("aaaa");
 
         for(int i = 1; i < roomCount; i++) {
             bool gott = false; // for checking if a room has been created at all
@@ -167,10 +164,11 @@ public class RoomLayerOuter : MonoBehaviour
         
     }
     bool TryForRoom(int x, int y, int n) {
-        Debug.Log("Trying for room (" + x + ", " + y + ") as " + n);
+        string dgbOut = "";
+        dgbOut += "Trying for room " + n + " at (" + x + ", " + y + ")" + "\n";
         // If the cell is alreayd occupied
         if (plan[x, y].occupied) {
-            Debug.Log("(" + x + ", " + y + ") was occupied.");
+            Debug.Log(dgbOut + "(" + x + ", " + y + ") was occupied.");
             return false;
         }
         // Chance for the cell to fail with adjacent rooms
@@ -178,20 +176,21 @@ public class RoomLayerOuter : MonoBehaviour
         // 2: 50%
         // 3: 75%
         if (!(GetAdjacentRooms(x, y) < 2) && GetAdjacentRooms(x, y) * 25 + 25 < Random.value * 100) {
-            Debug.Log("(" + x + ", " + y + ") Had too many adjacent rooms: " + GetAdjacentRooms(x, y));
+            Debug.Log(dgbOut + "(" + x + ", " + y + ") Had too many adjacent rooms: " + GetAdjacentRooms(x, y));
             return false;
         }
         if(cRoomCount < 0) {
-            Debug.Log("(" + x + ", " + y + ") not placed because all rooms were placed: " + cRoomCount);
+            Debug.Log(dgbOut + "(" + x + ", " + y + ") not placed because all rooms were placed: " + cRoomCount);
             return false;
         }
-        if(FlipCoin()) {
-            Debug.Log("Flipped coin vetoed (" + x + ", " + y + ")");
-        }
+        /*if(FlipCoin()) {
+            Debug.Log(dgbOut + "Flipped coin vetoed (" + x + ", " + y + ")");
+            return false;
+        }*/
         plan[x, y].occupied = true;
         plan[x, y].number = n;
 
-        Debug.Log("Successfully set (" + x + ", " + y + ") as " + n);
+        Debug.Log(dgbOut + "Successfully set (" + x + ", " + y + ") as " + n);
         return true;
         
     }

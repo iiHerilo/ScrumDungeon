@@ -20,7 +20,7 @@ public class SpriteFlipper : MonoBehaviour
             GetComponent<SpriteRenderer>().flipX = true;
             flipped = true;
         }
-   else if(((isPlayer && input > 0) ^ (!isPlayer && difference < 0)) && flipped) {
+        else if(((isPlayer && input > 0) ^ (!isPlayer && difference < 0)) && flipped) {
             GetComponent<SpriteRenderer>().flipX = false;
             flipped = false;
         }

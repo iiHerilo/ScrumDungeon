@@ -24,7 +24,6 @@ public class TeleporterZone : MonoBehaviour
 
         if(chr != null) {
             Vector2 next = JumpDistance;
-            Debug.Log(next);
 
             switch(Direction) {
                 case Cardinal.North:
