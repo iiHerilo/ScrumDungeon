@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed = 2.0f;
-    /*public float maxRight = 7;
+    public float speed = 3.0f;
+    public float maxRight = 7;
     public float maxLeft = -7;
     public float maxUp = 4;
-    public float maxDown = -4.5f;*/
+    public float maxDown = -4.5f;
 
     public int maxHealth = 4;
-    int currentHealth;
+    public int currentHealth;
 
     Hearts hearts;
-    Rigidbody2D physics;
     float horizontal;
     float vertical;
 
@@ -22,7 +21,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         hearts = GetComponent<Hearts>();
-        physics = GetComponent<Rigidbody2D>();
 
         currentHealth = maxHealth;
     }
@@ -32,11 +30,7 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        
-        // I get what this is supposed to do but it doesnt work since the axis aren't acceleration
-        // Commented this code out in favor of movement that interacts with the actual physics engine
-        // --Aaron
-        /*Vector2 position = transform.position;
+        Vector2 position = transform.position;
         if (horizontal == 1 && position.x >= maxRight || horizontal == -1 && position.x <= maxLeft)
         {
             horizontal = 0;
@@ -47,14 +41,7 @@ public class Player : MonoBehaviour
         }
         position.x += speed * horizontal * Time.deltaTime;
         position.y += speed * vertical * Time.deltaTime;
-        transform.position = position;*/
-    }
-    void FixedUpdate() {
-        Vector3 position = transform.position;
-        position.x += speed * horizontal * Time.deltaTime;
-        position.y += speed * vertical * Time.deltaTime;
-
-        physics.MovePosition(position);
+        transform.position = position;
     }
 
     public void ChangeHealth(int amount)
