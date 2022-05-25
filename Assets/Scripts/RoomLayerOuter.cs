@@ -43,6 +43,80 @@ public class RoomLayerOuter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
+        
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    bool TryForRoom(int x, int y, int n) {
+        string dgbOut = "";
+        dgbOut += "Trying for room " + n + " at (" + x + ", " + y + ")" + "\n";
+        // If the cell is alreayd occupied
+        if (plan[x, y].occupied) {
+            Debug.Log(dgbOut + "(" + x + ", " + y + ") was occupied.");
+            return false;
+        }
+        // Chance for the cell to fail with adjacent rooms
+        // 1: 0%
+        // 2: 50%
+        // 3: 75%
+        if (!(GetAdjacentRooms(x, y) < 2) && GetAdjacentRooms(x, y) * 25 + 25 < Random.value * 100) {
+            Debug.Log(dgbOut + "(" + x + ", " + y + ") Had too many adjacent rooms: " + GetAdjacentRooms(x, y));
+            return false;
+        }
+        if(cRoomCount < 0) {
+            Debug.Log(dgbOut + "(" + x + ", " + y + ") not placed because all rooms were placed: " + cRoomCount);
+            return false;
+        }
+        /*if(FlipCoin()) {
+            Debug.Log(dgbOut + "Flipped coin vetoed (" + x + ", " + y + ")");
+            return false;
+        }*/
+        plan[x, y].occupied = true;
+        plan[x, y].number = n;
+
+        Debug.Log(dgbOut + "Successfully set (" + x + ", " + y + ") as " + n);
+        return true;
+        
+    }
+    Vector3Int v3i(int x, int y, int z) {
+        return new Vector3Int(x, y, z);
+    }
+
+    bool TryForRoom(Vector2Int pos, int n) {
+        return TryForRoom(pos.x, pos.y, n);
+    }
+
+    int GetAdjacentRooms(int x, int y) {
+        int c = 0;
+            if (x - 1 >= 0) {
+                if(plan[x - 1, y].occupied)
+                    c++;
+            }
+            if (x + 1 < plan.GetLength(0)) {
+                if(plan[x + 1, y].occupied)
+                    c++;
+            }
+            if (y - 1 >= 0) {
+                if(plan[x, y - 1].occupied)
+                    c++;
+            }
+            if (y + 1 < plan.GetLength(1)) {
+                if(plan[x, y + 1].occupied)
+                    c++;
+            }
+        
+        return c;
+    }
+    bool FlipCoin() {
+        return Random.value * 100 < 50;
+    }
+
+    void Generate() {
         plan = new Room[roomCount, roomCount];
 
         for(int i = 0; i < plan.GetLength(0); i++) {
@@ -155,75 +229,12 @@ public class RoomLayerOuter : MonoBehaviour
                     }
             }
         }
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void OnEnable() {
+        Main.OnStart += Generate;
     }
-    bool TryForRoom(int x, int y, int n) {
-        string dgbOut = "";
-        dgbOut += "Trying for room " + n + " at (" + x + ", " + y + ")" + "\n";
-        // If the cell is alreayd occupied
-        if (plan[x, y].occupied) {
-            Debug.Log(dgbOut + "(" + x + ", " + y + ") was occupied.");
-            return false;
-        }
-        // Chance for the cell to fail with adjacent rooms
-        // 1: 0%
-        // 2: 50%
-        // 3: 75%
-        if (!(GetAdjacentRooms(x, y) < 2) && GetAdjacentRooms(x, y) * 25 + 25 < Random.value * 100) {
-            Debug.Log(dgbOut + "(" + x + ", " + y + ") Had too many adjacent rooms: " + GetAdjacentRooms(x, y));
-            return false;
-        }
-        if(cRoomCount < 0) {
-            Debug.Log(dgbOut + "(" + x + ", " + y + ") not placed because all rooms were placed: " + cRoomCount);
-            return false;
-        }
-        /*if(FlipCoin()) {
-            Debug.Log(dgbOut + "Flipped coin vetoed (" + x + ", " + y + ")");
-            return false;
-        }*/
-        plan[x, y].occupied = true;
-        plan[x, y].number = n;
-
-        Debug.Log(dgbOut + "Successfully set (" + x + ", " + y + ") as " + n);
-        return true;
-        
-    }
-    Vector3Int v3i(int x, int y, int z) {
-        return new Vector3Int(x, y, z);
-    }
-
-    bool TryForRoom(Vector2Int pos, int n) {
-        return TryForRoom(pos.x, pos.y, n);
-    }
-
-    int GetAdjacentRooms(int x, int y) {
-        int c = 0;
-            if (x - 1 >= 0) {
-                if(plan[x - 1, y].occupied)
-                    c++;
-            }
-            if (x + 1 < plan.GetLength(0)) {
-                if(plan[x + 1, y].occupied)
-                    c++;
-            }
-            if (y - 1 >= 0) {
-                if(plan[x, y - 1].occupied)
-                    c++;
-            }
-            if (y + 1 < plan.GetLength(1)) {
-                if(plan[x, y + 1].occupied)
-                    c++;
-            }
-        
-        return c;
-    }
-    bool FlipCoin() {
-        return Random.value * 100 < 50;
+    void OnDisable() {
+        Main.OnStart -= Generate;
     }
 }
