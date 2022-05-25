@@ -5,7 +5,7 @@ using UnityEngine;
 public class RedEnemy: MonoBehaviour
 {
     public bool goRight = true;
-    public float enemyHorizSpeed = 0.01f;
+    public float enemyHorizSpeed = 3.0f;
     public float enemyMaxRight = 7;
     public float enemyMaxLeft = -7;
     // Start is called before the first frame update
@@ -28,12 +28,20 @@ public class RedEnemy: MonoBehaviour
         }
         if (goRight == true)
         {
-            position.x += enemyHorizSpeed;
+            position.x += enemyHorizSpeed * Time.deltaTime;
         }
         else
         {
-            position.x -= enemyHorizSpeed;
+            position.x -= enemyHorizSpeed* Time.deltaTime;
         }
         transform.position = position;
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Player player = other.gameObject.GetComponent<Player>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
 }

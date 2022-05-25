@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ogre : MonoBehaviour
 {
     public bool goUp = true;
-    public float enemyVertiSpeed = 0.01f;
+    public float enemyVertiSpeed = 3.0f;
     public float enemyMaxUp = 4;
     public float enemyMaxDown = -4;
     // Start is called before the first frame update
@@ -28,12 +28,20 @@ public class Ogre : MonoBehaviour
         }
         if (goUp == true)
         {
-            position.y += enemyVertiSpeed;
+            position.y += enemyVertiSpeed * Time.deltaTime;
         }
         else
         {
-            position.y -= enemyVertiSpeed;
+            position.y -= enemyVertiSpeed * Time.deltaTime;
         }
         transform.position = position;
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Player player = other.gameObject.GetComponent<Player>();
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
     }
 }
