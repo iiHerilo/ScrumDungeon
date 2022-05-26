@@ -5,10 +5,10 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float speed = 3.0f;
-    public float maxRight = 7;
+    /*public float maxRight = 7;
     public float maxLeft = -7;
     public float maxUp = 4;
-    public float maxDown = -4.5f;
+    public float maxDown = -4.5f;*/
 
     public int maxHealth = 4;
     public int currentHealth;
