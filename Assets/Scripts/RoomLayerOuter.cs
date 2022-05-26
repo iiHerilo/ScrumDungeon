@@ -7,6 +7,9 @@ public class RoomLayerOuter : MonoBehaviour
 {
     public delegate void SpawnTrigger(Vector2 location);
     public static event SpawnTrigger OnSpawn;
+    public delegate void SurroundingRooms(Room[,] list, Vector2Int current);
+    public static event SurroundingRooms Inform;
+
 
     public static Vector2Int RoomDimensions = new Vector2Int(40, 40);
     public List<Tilemap> Rooms = new List<Tilemap>();
@@ -19,10 +22,12 @@ public class RoomLayerOuter : MonoBehaviour
     public Tile WallTopLeft;
     public List<Vector2Int> ExitLocations = new List<Vector2Int>();
 
-    class Room {
+    public class Room {
         public GameObject realobj; // The tilemap gameobject as it appears ingame
         public bool occupied = false; // whether the room is occupied or empty
         public int number = -1; // unique room number for determining which rooms are what
+        public int seen = 0;
+        
     }
 
     public Vector2Int StartingRoomCoordinates = new Vector2Int();
@@ -38,13 +43,21 @@ public class RoomLayerOuter : MonoBehaviour
         }
     }
     Room[,] plan;
+    Vector2Int CurrentRoom;
 
 
     // Start is called before the first frame update
     void Start()
     {   
-        
+        plan = new Room[roomCount, roomCount];
 
+        for(int i = 0; i < plan.GetLength(0); i++) {
+            for(int j = 0; j < plan.GetLength(1); j++) {
+                plan[i, j] = new Room();
+            }
+        }
+        StartingRoomCoordinates.x = (int)(Random.value * 10);
+        StartingRoomCoordinates.y = (int)(Random.value * 10);
     }
 
     // Update is called once per frame
@@ -78,6 +91,8 @@ public class RoomLayerOuter : MonoBehaviour
         }*/
         plan[x, y].occupied = true;
         plan[x, y].number = n;
+        if(n == 0)
+            CurrentRoom = new Vector2Int(x, y);
 
         Debug.Log(dgbOut + "Successfully set (" + x + ", " + y + ") as " + n);
         return true;
@@ -117,16 +132,6 @@ public class RoomLayerOuter : MonoBehaviour
     }
 
     void Generate() {
-        plan = new Room[roomCount, roomCount];
-
-        for(int i = 0; i < plan.GetLength(0); i++) {
-            for(int j = 0; j < plan.GetLength(1); j++) {
-                plan[i, j] = new Room();
-            }
-        }
-        StartingRoomCoordinates.x = (int)(Random.value * 10);
-        StartingRoomCoordinates.y = (int)(Random.value * 10);
-    
 
         cRoomCount = roomCount;
         TryForRoom(StartingRoomCoordinates, 0);
@@ -186,15 +191,14 @@ public class RoomLayerOuter : MonoBehaviour
             for(int y = 0; y < plan.GetLength(1); y++) {
                 if(plan[x, y].occupied)
                     {
+                        Debug.Log(plan[x, y].number);
                         plan[x, y].realobj = Instantiate(Rooms[plan[x, y].number == 0 ? 0 : 1 + (int)(Random.value * (Rooms.Count - 1))].gameObject, new Vector3((x) * (RoomDimensions.x), (y) * (RoomDimensions.y), 0), Quaternion.identity);
                         plan[x, y].realobj.transform.parent = gameObject.transform;
-
                         if(plan[x, y].number == 0) {
                             OnSpawn(new Vector2((x) * (RoomDimensions.x), (y) * (RoomDimensions.y)));
                         }
 
                         Tilemap tilemap = plan[x, y].realobj.GetComponent<Tilemap>();
-                        
                         // exit locations
                         Vector3Int[] north = {v3i(-1, 5, 0), v3i(0, 5, 0)};
                         Vector3Int[] east = {v3i(-9, 0, 0), v3i(-9, -1, 0)};
@@ -229,12 +233,45 @@ public class RoomLayerOuter : MonoBehaviour
                     }
             }
         }
+        SendInfo(Vector2.zero);
+    }
+
+    void SendInfo(Vector2 pos) {
+        
+        if(pos.x > 0) {
+            CurrentRoom.x++;
+        }
+        else if(pos.x < 0) {
+            CurrentRoom.x--;
+        }
+        else if(pos.y > 0) {
+            CurrentRoom.y++;
+        }
+        else if(pos.y < 0) {
+            CurrentRoom.y--;
+        }
+        int x = CurrentRoom.x;
+        int y = CurrentRoom.y;
+        plan[CurrentRoom.x, CurrentRoom.y].seen = 2;
+        if(x - 1 >= 0 && plan[x - 1, y].occupied && plan[x - 1, y].seen != 2)
+            plan[x - 1, y].seen = 1;
+        if(x + 1 < plan.GetLength(0) && plan[x + 1, y].occupied && plan[x + 1, y].seen != 2)
+            plan[x + 1, y].seen = 1;
+        if(y - 1 >= 0 && plan[x, y - 1].occupied && plan[x, y - 1].seen != 2)
+            plan[x, y - 1].seen = 1;
+        if(y + 1 < plan.GetLength(1) && plan[x, y + 1].occupied && plan[x, y + 1].seen != 2)
+            plan[x, y + 1].seen = 1;
+        
+
+        Inform(plan, CurrentRoom);
     }
 
     void OnEnable() {
         Main.OnStart += Generate;
+        TeleporterZone.OnTeleport += SendInfo;
     }
     void OnDisable() {
         Main.OnStart -= Generate;
+        TeleporterZone.OnTeleport -= SendInfo;
     }
 }
