@@ -50,4 +50,13 @@ public class EnemyAI : MonoBehaviour
             player.ChangeHealth(-1);
         }
     }
+
+    public void ChangeHealth(int amount)
+    {
+        health += amount;
+        if (health <= 0)
+        {
+            Destroy(this);
+        }
+    }
 }
