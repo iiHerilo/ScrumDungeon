@@ -12,6 +12,8 @@ public class Main : MonoBehaviour
     {
         Button b = gameObject.GetComponent<Button>();
         b.onClick.AddListener(delegate() { Play(); });
+        //HealthBar healthBar = GetComponent<HealthBar>();
+        //healthBar.isOn = true;
     }
 
     void Play() {
