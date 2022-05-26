@@ -1075,7 +1075,7 @@ TextureImporter:
     second: bomb
   - first:
       213: -5280881310554224794
-    second: dungeontileset-extended_357
+    second: RedCarpet
   - first:
       213: 7816945503744416992
     second: dungeontileset-extended_358
@@ -1298,9 +1298,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -6037,48 +6037,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_321
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 101
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 0, z: 0, w: 4}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de06d69f2dee6a020800000000000000
-      internalID: 2352830445242900717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeontileset-extended_322
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 101
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 4, w: 4}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a486995b1e55c18a0800000000000000
-      internalID: -6333092548087027638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: dungeontileset-extended_323
       rect:
         serializedVersion: 2
@@ -6389,48 +6347,6 @@ TextureImporter:
       bones: []
       spriteID: d821f1e1fc6a45c70800000000000000
       internalID: 8958968967240553101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeontileset-extended_338
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 85
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1db0a95468db6a3e0800000000000000
-      internalID: -2042736996574950447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeontileset-extended_339
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 85
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 4, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bf7b549d06f88400800000000000000
-      internalID: 326781511168393144
       vertices: []
       indices: 
       edges: []
@@ -6772,43 +6688,22 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dungeontileset-extended_357
+      name: RedCarpet
       rect:
         serializedVersion: 2
         x: 16
         y: 69
-        width: 16
-        height: 16
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 4, y: 4, z: 0, w: 0}
+      border: {x: 4, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 6678a676d6a86b6b0800000000000000
       internalID: -5280881310554224794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dungeontileset-extended_358
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 69
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 4, z: 4, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ecd54b058e5b7c60800000000000000
-      internalID: 7816945503744416992
       vertices: []
       indices: 
       edges: []
