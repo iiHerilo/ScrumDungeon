@@ -40,4 +40,23 @@ public class EnemyAI : MonoBehaviour
             WaitToStartTimer--;
         }
     }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        Player player = other.gameObject.GetComponent<Player>();
+
+        if (player != null)
+        {
+            player.ChangeHealth(-1);
+        }
+    }
+
+    public void ChangeHealth(int amount)
+    {
+        health += amount;
+        if (health <= 0)
+        {
+            Destroy(this);
+        }
+    }
 }

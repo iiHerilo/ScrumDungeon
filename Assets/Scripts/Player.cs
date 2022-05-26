@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -10,20 +11,21 @@ public class Player : MonoBehaviour
     public float maxUp = 4;
     public float maxDown = -4.5f;*/
 
-    public int maxHealth = 4;
+    public int maxHealth = 5;
     public int currentHealth;
 
-    Hearts hearts;
     Rigidbody2D physics;
     float horizontal;
     float vertical;
 
+    string titleScene;
+
     // Start is called before the first frame update
     void Start()
     {
-        hearts = GetComponent<Hearts>();
         physics = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
+        titleScene = SceneManager.GetActiveScene().name;
     }
 
     // Update is called once per frame
@@ -58,11 +60,28 @@ public class Player : MonoBehaviour
 
     public void ChangeHealth(int amount)
     {
-        currentHealth = hearts.GetHealth(currentHealth + amount, 0, maxHealth);
+        currentHealth = GetHealth(currentHealth + amount, 0, maxHealth);
         Debug.Log(currentHealth + "/" + maxHealth);
     }
 
+    int GetHealth(int current, int low, int high)
+    {
+        if (current > high)
+        {
+            current = high;
+        }
+        if (current <= low)
+        {
+            SceneManager.LoadScene(0);
+            current = maxHealth;
+        }
+        return current;
+    }
 
+    public string GetHealth()
+    {
+        return currentHealth + "/" + maxHealth;
+    }
 
     void OnEnable() {
         TeleporterZone.OnTeleport += Teleport;

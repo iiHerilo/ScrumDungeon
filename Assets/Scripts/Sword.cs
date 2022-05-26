@@ -7,6 +7,7 @@ public class Sword : MonoBehaviour
     public Sprite sprite1;
     public Sprite sprite2;
     private SpriteRenderer spriteRenderer;
+    bool isOn = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +21,25 @@ public class Sword : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKey("space"))
         {
             spriteRenderer.sprite = sprite2;
+            isOn = true;
         }
         else
         {
             spriteRenderer.sprite = sprite1;
+            isOn = false;
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        EnemyAI enemy = other.gameObject.GetComponent<EnemyAI>();
+
+        if (enemy != null && isOn)
+        {
+            enemy.ChangeHealth(-1);
         }
     }
 }
