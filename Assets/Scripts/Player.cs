@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        // I get what this is supposed to do but it doesnt work since the axis aren't acceleration
+        // Commented this code out in favor of movement that interacts with the actual physics engine
+        // --Aaron
         /*
         Vector2 position = transform.position;
         if (horizontal == 1 && position.x >= maxRight || horizontal == -1 && position.x <= maxLeft)
