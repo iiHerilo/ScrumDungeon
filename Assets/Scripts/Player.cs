@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public int currentHealth;
 
     Hearts hearts;
+    Rigidbody2D physics;
     float horizontal;
     float vertical;
 
@@ -21,7 +22,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         hearts = GetComponent<Hearts>();
-
+        physics = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
     }
 
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
+        /*
         Vector2 position = transform.position;
         if (horizontal == 1 && position.x >= maxRight || horizontal == -1 && position.x <= maxLeft)
         {
@@ -41,8 +43,15 @@ public class Player : MonoBehaviour
         }
         position.x += speed * horizontal * Time.deltaTime;
         position.y += speed * vertical * Time.deltaTime;
-        transform.position = position;
+        transform.position = position;*/
     }
+    void FixedUpdate() {
+        Vector3 position = transform.position;
+        position.x += speed * horizontal * Time.deltaTime;
+        position.y += speed * vertical * Time.deltaTime;
+
+        physics.MovePosition(position);
+    }   
 
     public void ChangeHealth(int amount)
     {
