@@ -86,10 +86,12 @@ public class Player : MonoBehaviour
     void OnEnable() {
         TeleporterZone.OnTeleport += Teleport;
         RoomLayerOuter.OnSpawn += Goto;
+        CharacterSwitch.OnSwitch += SpriteSwap;
     }
     void OnDisable() {
         TeleporterZone.OnTeleport -= Teleport;
         RoomLayerOuter.OnSpawn -= Goto;
+        CharacterSwitch.OnSwitch -= SpriteSwap;
     }
 
 
@@ -105,5 +107,9 @@ public class Player : MonoBehaviour
         position.x = pos.x;
         position.y = pos.y;
         transform.position = position;
+    }
+    void SpriteSwap(Sprite s) {
+        SpriteRenderer sp = GetComponent<SpriteRenderer>();
+        sp.sprite = s;
     }
 }
