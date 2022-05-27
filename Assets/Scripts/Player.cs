@@ -72,7 +72,7 @@ public class Player : MonoBehaviour
         }
         if (current <= low)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(titleScene);
             current = maxHealth;
         }
         return current;
