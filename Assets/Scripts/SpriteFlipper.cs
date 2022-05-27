@@ -26,8 +26,7 @@ public class SpriteFlipper : MonoBehaviour
             if (isSword)
             {
                 GetComponent<SpriteRenderer>().flipY = true;
-                Vector2 position = transform.position;
-                position.x = -0.5f;
+                //flip(flipped);
             }
         }
         else if((((isPlayer || isSword) && input > 0) ^ (!isPlayer && !isSword && difference < 0)) && flipped) {
@@ -39,10 +38,22 @@ public class SpriteFlipper : MonoBehaviour
             if (isSword)
             {
                 GetComponent<SpriteRenderer>().flipY = false;
-                Vector2 position = transform.position;
-                position.x = 0.5f;
+                //flip(flipped);
             }
         }
         last = transform.position;
     }
+    /*void flip(bool flipped)
+    {
+        Vector2 position = transform.position;
+        if (flipped)
+        {
+            position.x = -0.5f;
+        }
+        else
+        {
+            position.x = 0.5f;
+        }
+        transform.position = position;
+    }*/
 }
