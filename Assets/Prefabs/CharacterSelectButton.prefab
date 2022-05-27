@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 707861143610384689}
   - component: {fileID: 4000534528834436343}
   - component: {fileID: 2434617626499008522}
+  - component: {fileID: 6238713561980209229}
   m_Layer: 5
   m_Name: CharacterSelectButton
   m_TagString: Untagged
@@ -290,3 +291,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Character: {fileID: 5265542147880145739, guid: 591c0d95bb7aaba4f8b4b8fa855f1d1d, type: 3}
+--- !u!114 &6238713561980209229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808131202531600138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ea67fcc688c624b90459223649601f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
