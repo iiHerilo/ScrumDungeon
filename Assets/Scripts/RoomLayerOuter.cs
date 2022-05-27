@@ -13,6 +13,7 @@ public class RoomLayerOuter : MonoBehaviour
 
     public static Vector2Int RoomDimensions = new Vector2Int(40, 40);
     public List<Tilemap> Rooms = new List<Tilemap>();
+    public List<Tilemap> BossRooms = new List<Tilemap>();
     public List<Tile> WallParts = new List<Tile>();
     public Tile Wall;
     public Tile WallTopMid;
@@ -65,7 +66,7 @@ public class RoomLayerOuter : MonoBehaviour
     {
         
     }
-    bool TryForRoom(int x, int y, int n) {
+    bool TryForRoom(int x, int y, int n, bool gen) {
         string dgbOut = "";
         dgbOut += "Trying for room " + n + " at (" + x + ", " + y + ")" + "\n";
         // If the cell is alreayd occupied
@@ -89,12 +90,13 @@ public class RoomLayerOuter : MonoBehaviour
             Debug.Log(dgbOut + "Flipped coin vetoed (" + x + ", " + y + ")");
             return false;
         }*/
-        plan[x, y].occupied = true;
-        plan[x, y].number = n;
-        if(n == 0)
-            CurrentRoom = new Vector2Int(x, y);
-
-        Debug.Log(dgbOut + "Successfully set (" + x + ", " + y + ") as " + n);
+        if(gen) {
+            plan[x, y].occupied = true;
+            plan[x, y].number = n;
+            if(n == 0)
+                CurrentRoom = new Vector2Int(x, y);
+            Debug.Log(dgbOut + "Successfully set (" + x + ", " + y + ") as " + n);
+        }
         return true;
         
     }
@@ -102,8 +104,8 @@ public class RoomLayerOuter : MonoBehaviour
         return new Vector3Int(x, y, z);
     }
 
-    bool TryForRoom(Vector2Int pos, int n) {
-        return TryForRoom(pos.x, pos.y, n);
+    bool TryForRoom(Vector2Int pos, int n, bool gen) {
+        return TryForRoom(pos.x, pos.y, n, gen);
     }
 
     int GetAdjacentRooms(int x, int y) {
@@ -134,7 +136,7 @@ public class RoomLayerOuter : MonoBehaviour
     void Generate() {
 
         cRoomCount = roomCount;
-        TryForRoom(StartingRoomCoordinates, 0);
+        TryForRoom(StartingRoomCoordinates, 0, true);
 
         for(int i = 1; i < roomCount; i++) {
             bool gott = false; // for checking if a room has been created at all
@@ -145,28 +147,28 @@ public class RoomLayerOuter : MonoBehaviour
                     gott = true;
                     Vector2Int pointer = new Vector2Int(x, y);
                         if (x - 1 >= 0)
-                            if (TryForRoom(x - 1, y, i) ) {
+                            if (TryForRoom(x - 1, y, i, true) ) {
                                 cRoomCount--;
                                 i++;
                                 if (FlipCoin()) continue;
                             }
                             
                         if (x + 1 < plan.GetLength(0))
-                            if (TryForRoom(x + 1, y, i)) {
+                            if (TryForRoom(x + 1, y, i, true)) {
                                 cRoomCount--;
                                 i++;
                                 if (FlipCoin()) continue;
                             }
                             
                         if (y - 1 >= 0)
-                            if (TryForRoom(x, y - 1, i)) {
+                            if (TryForRoom(x, y - 1, i, true)) {
                                 cRoomCount--;
                                 i++;
                                 if (FlipCoin()) continue;
                             }
                             
                         if (y + 1 < plan.GetLength(1))
-                            if (TryForRoom(x, y + 1, i)) {
+                            if (TryForRoom(x, y + 1, i, true)) {
                                 cRoomCount--;
                                 i++;
                                 if (FlipCoin()) continue;
@@ -191,7 +193,6 @@ public class RoomLayerOuter : MonoBehaviour
             for(int y = 0; y < plan.GetLength(1); y++) {
                 if(plan[x, y].occupied)
                     {
-                        Debug.Log(plan[x, y].number);
                         plan[x, y].realobj = Instantiate(Rooms[plan[x, y].number == 0 ? 0 : 1 + (int)(Random.value * (Rooms.Count - 1))].gameObject, new Vector3((x) * (RoomDimensions.x), (y) * (RoomDimensions.y), 0), Quaternion.identity);
                         plan[x, y].realobj.transform.parent = gameObject.transform;
                         if(plan[x, y].number == 0) {
@@ -252,16 +253,36 @@ public class RoomLayerOuter : MonoBehaviour
         }
         int x = CurrentRoom.x;
         int y = CurrentRoom.y;
-        plan[CurrentRoom.x, CurrentRoom.y].seen = 2;
-        if(x - 1 >= 0 && plan[x - 1, y].occupied && plan[x - 1, y].seen != 2)
-            plan[x - 1, y].seen = 1;
-        if(x + 1 < plan.GetLength(0) && plan[x + 1, y].occupied && plan[x + 1, y].seen != 2)
-            plan[x + 1, y].seen = 1;
-        if(y - 1 >= 0 && plan[x, y - 1].occupied && plan[x, y - 1].seen != 2)
-            plan[x, y - 1].seen = 1;
-        if(y + 1 < plan.GetLength(1) && plan[x, y + 1].occupied && plan[x, y + 1].seen != 2)
-            plan[x, y + 1].seen = 1;
+        if(plan[CurrentRoom.x, CurrentRoom.y].seen <= 2)
+            plan[CurrentRoom.x, CurrentRoom.y].seen = 2;
+        else
+            plan[CurrentRoom.x, CurrentRoom.y].seen = 12;
+
         
+        for(int j = 0; j < 4; j++) {
+            Vector2Int next = new Vector2Int(x, y);
+            switch(j) {
+                case 0:
+                    next.y++;
+                    break;
+                case 1:
+                    next.y--;
+                    break;
+                case 2:
+                    next.x++;
+                    break;
+                case 3:
+                    next.x--;
+                    break;
+            }
+            if(next.x >= 0 && next.x < plan.GetLength(0) && next.y >= 0 && next.y < plan.GetLength(1) && plan[next.x, next.y].occupied) {
+                if(plan[next.x, next.y].seen < 2)
+                    plan[next.x, next.y].seen = 1;
+                else if(plan[next.x, next.y].seen != 12)
+                    plan[next.x, next.y].seen = 11;
+            }
+
+        }
 
         Inform(plan, CurrentRoom);
     }
@@ -273,5 +294,46 @@ public class RoomLayerOuter : MonoBehaviour
     void OnDisable() {
         Main.OnStart -= Generate;
         TeleporterZone.OnTeleport -= SendInfo;
+    }
+
+
+    void GenerateBossRoom(int n) {
+        if(n < 0)
+            throw new System.Exception("No available places for boss rooms!");
+        for(int x = 0; x < plan.GetLength(0); x++) {
+            for(int y = 0; y < plan.GetLength(1); y++) {
+                if(plan[x, y].number == 0) {
+                    int j = (int)(Random.value * 4);
+                    for(int i = 0; i < 4; i++) {
+                        j -= ++j >= 4 ? 4 : 0; // keep between 0 and 4 for all directions
+                        Vector2Int next = new Vector2Int(x, y);
+                        switch(j) {
+                            case 0:
+                                next.y++;
+                                break;
+                            case 1:
+                                next.y--;
+                                break;
+                            case 2:
+                                next.x++;
+                                break;
+                            case 3:
+                                next.x--;
+                                break;
+                        }
+                        if(next.x >= 0 && next.x < plan.GetLength(0) && next.y >= 0 && next.y < plan.GetLength(1)) {
+                            if(GetAdjacentRooms(next.x, next.y) == 1) {
+                                x = next.x;
+                                y = next.y;
+                                plan[x, y].occupied = true;
+                                plan[x, y].number = RoomCount * 2;
+                                plan[x, y].seen = 10;
+                                plan[x, y].realobj = Instantiate(BossRooms[(int)(Random.value * BossRooms.Count)].gameObject, new Vector3((x) * (RoomDimensions.x), (y) * (RoomDimensions.y), 0), Quaternion.identity);
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -311,4 +311,7 @@ MonoBehaviour:
   roomOccupied: {fileID: 11400000, guid: 82f13e95ecf2d2b449ef9870d6f20412, type: 2}
   roomUnranged: {fileID: 11400000, guid: 7ec4d89d6c27e194c8dbc1f4aef45b30, type: 2}
   roomBorder: {fileID: 11400000, guid: 182a692acde600e4fa33ca1383ced111, type: 2}
+  bossUntouched: {fileID: 11400000, guid: a1110f755fc7aff4886afe67305670c6, type: 2}
+  bossUnseen: {fileID: 11400000, guid: a1110f755fc7aff4886afe67305670c6, type: 2}
+  bossCleared: {fileID: 11400000, guid: 8a2a80600a2251a4896eaaf70afb8d1b, type: 2}
   range: 5

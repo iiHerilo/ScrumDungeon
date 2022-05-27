@@ -11,6 +11,9 @@ public class Minimap : MonoBehaviour
     public Tile roomOccupied;
     public Tile roomUnranged;
     public Tile roomBorder;
+    public Tile bossUntouched;
+    public Tile bossUnseen;
+    public Tile bossCleared;
 
     public int range = 5;
     Tilemap tilemap;
@@ -55,6 +58,15 @@ public class Minimap : MonoBehaviour
                         default:
                         case 0:
                             next = roomUnranged;
+                            break;
+                        case 10:
+                            next = bossUnseen;
+                            break;
+                        case 11:
+                            next = bossUntouched;
+                            break;
+                        case 12:
+                            next = bossCleared;
                             break;
                     }
                     if(x == current.x && y == current.y) 
